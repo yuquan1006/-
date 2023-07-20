@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 目前都是fiex布局，务必重视
+    弹性布局中必须有一个 display 属性设置为 flex 的父元素。 弹性容器的直接子元素会自动成为弹性项目。
+    以下是flex容器属性；
+    flex-direction
+    flex-wrap
+    flex-flow
+    justify-content
+    align-items
+    align-content
+
+    -->
+
+    <style>
+        .flex-container{
+            display: flex;
+            background-color: dodgerblue;
+        }
+        .flex-container>div{
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+
+
+     </style>
+</head>
+<body>
+
+        <div class="flex-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+
+</body>
+</html>

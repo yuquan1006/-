@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML标签：排版标签</title>
+</head>
+<body>
+    <!-- 标题使用<h1>至<h6>标签进行定义。<h1>定义最大的标题，<h6>定义最小的标题。具有align属性，属性值可以是：left、center、right。    -->
+    <h1>一级标题</h1>
+    <h6>六级标题</h6>
+
+    <!-- HTML标签是分等级的，HTML将所有的标签分为两种：
+文本级标签：p、span、a、b、i、u、em。文本级标签里只能放文字、图片、表单元素。（a标签里不能放a和input）
+容器级标签：div、h系列、li、dt、dd。容器级标签里可以放置任何东西。
+    -->
+
+    <p>自古轻声留不住</p>
+    <hr size="0" width="500" color="#FF0000"/>
+    <p>总是套路留人心</p>
+
+    <br/>
+    <p>上面有个换行标签</p>
+
+    <!--  div和span标签
+        div标签：可以把标签中内容分割成独立的区块。必须单独占据一行; span标签：和div作用一致，但不换行
+        div在浏览器中，默认是不会增加任何的效果的，但是语义变了，div中的所有元素是一个小区域。 div标签是一个容器级标签，里面什么都能放，甚至可以放div自己。
+        span也是表达“小区域、小跨度”的标签，但只是一个文本级的标签。 就是说，span里面只能放置文字、图片、表单元素。 span里面不能放p、h、ul、dl、ol、div。
+        如果单独在网页中插入这两个元素，不会对页面产生任何的影响。这两个元素是专门为定义CSS样式而生的。或者说，DIV+CSS来实现各种样式。
+    -->
+
+    <div align="center">div标签1</div>
+    <div>div标签2</div>
+    <span>span标签1</span>
+    <span>span标签2</span>
+
+
+</body>
+</html>

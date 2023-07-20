@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        css定位属性有三种，分别是绝对定位、相对定位、固定定位
+            position: absolute;
+            position: relative;
+            position: fixed;
+
+        相对定位：让元素相对于自己原来的位置，进行位置调整（可用于盒子的位置微调）。
+            1）微调元素
+            2）做绝对定位的参考，子绝父相
+            tip: 相对定位不脱标 相对定位：不脱标，老家留坑，别人不会把它的位置挤走。 也就是说，相对定位的真实位置还在老家，只不过影子出去了，可以到处飘
+
+        绝对定位：定义横纵坐标。原点在父容器的左上角或左下角。横坐标用left表示，纵坐标用top或者bottom表示。
+            绝对定位脱标:绝对定位之后，标签就不区分所谓的行内元素、块级元素了，不需要display:block就可以设置宽、高了
+            “子绝父相”有意义：这样可以保证父亲没有脱标，儿子脱标在父亲的范围里面移动。于是，工程上经常这样做：父亲浮动，设置相对定位（零偏移），然后让儿子绝对定位一定的距离。
+
+
+     -->
+    <style type="text/css">
+        .div1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+        .div2{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+
+            position: relative; /*相对定位：相对于自己原来的位置*/
+            left: 20px;         /*横坐标：正值表示向右偏移，负值表示向左偏移*/
+            top: 20px;          /*纵坐标：正值表示向下偏移，负值表示向上偏移*/
+
+        }
+
+        .backtop{
+			position: fixed;
+			bottom: 100px;
+			right: 30px;
+			width: 100px;
+			height: 30px;
+			background-color: gray;
+			text-align: center;
+			line-height:30px;
+			color:white;
+			text-decoration: none;   /*去掉超链接的下划线*/
+		}
+
+
+        .box{
+            height: 308px;
+            width: 307px;
+            border: 1px solid red;
+            margin: 100px;
+            position: relative;  /* 子绝父相*/
+        }
+        .box .dtc{
+            display: block;
+            width: 52px;
+            height: 28px;
+            background-image: url(http://img.smyhvae.com/20180116_1115.png);
+            
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- <div class="div1">有生之年</div>
+    <div class="div2">想来宪法</div>
+    <a  href="#" class="backtop">回到顶部</a> -->
+    <div class="box">
+        <span></span>
+        <div>
+            <img>
+        </div>
+        <h4></h4>
+    </div>
+
+</body>
+</html>

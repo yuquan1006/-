@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Lato");
+
+        html{
+            height: 100%;
+            background: #222222;
+            font-size: "lato",sans-serif;
+        }
+        .container{
+            display: block;
+            position: relative;
+            margin: 40px auto;
+            height: auto;
+            padding: 20px;
+        }
+
+        .container ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+        ul li{
+            color: #aaaaaa;
+            display: block;
+            position: relative;
+            float: left;
+            width: 100%;
+            height: 100px;
+            border-bottom: 1px solid #333;
+        }
+        ul li input[type="radio"] {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        ul li label {
+            display: block;
+            position: relative;
+            font-weight: 300;
+            font-size: 1.35em;
+            padding: 25px 25px 25px 80px;
+            margin: 10px auto;
+            height: 30px;
+            z-index: 9;
+            cursor: pointer;
+        }
+    ul li:hover label {
+        color: #ffffff;
+    }
+
+    ul li .check {
+        display: block;
+        position: absolute;
+        border: 5px solid #aaaaaa;
+        border-radius: 100%;
+        height: 25px;
+        width: 25px;
+        top: 30px;
+        left: 20px;
+        z-index: 5;
+        transition: border 0.25s linear;
+        -webkit-transition: border 0.25s linear;
+    }
+
+    ul li:hover .check {
+        border: 5px solid #ffffff;
+    }
+
+    /*“:before” 伪元素可以在元素的内容前面插入新内容。 既在.check元素前插入，在check元素前面加一些小的图标，通过定位把位置调合适*/
+    ul li .check::before {
+        display: block;
+        position: absolute;
+        content: "";
+        border-radius: 100%;
+        height: 15px;
+        width: 15px;
+        top: 5px;
+        left: 5px;
+        margin: auto;
+        transition: background 0.25s linear;
+        -webkit-transition: background 0.25s linear;
+    }
+
+    input[type="radio"]:checked ~ .check {
+        border: 5px solid #0dff92;
+    }
+
+    input[type="radio"]:checked ~ .check::before {
+        background: #0dff92;
+    }
+
+    input[type="radio"]:checked ~ label {
+        color: #0dff92;
+    }
+
+
+        .alert {
+                box-sizing: border-box;
+                padding: 20px 40px;
+                background-color: #bdffe1;
+                width: 100%;
+                color: #333;
+            }
+
+            .alert h2 {
+                font-size: 22px;
+                color: #232323;
+                /* margin-top: 0; */
+            }
+
+            .alert p {
+                line-height: 1.6em;
+                font-size: 18px;
+            }
+
+            .alert a {
+                color: #232323;
+                font-weight: bold;
+            }
+
+
+            .signature {
+	margin: 10px auto;
+	padding: 10px 0;
+	width: 100%;
+}
+
+.signature p {
+	text-align: center;
+	font-family: Helvetica, Arial, Sans-Serif;
+	font-size: 0.85em;
+	color: #aaaaaa;
+}
+
+.signature .much-heart {
+	display: inline-block;
+	position: relative;
+	margin: 0 4px;
+	height: 10px;
+	width: 10px;
+	background: #ac1d3f;
+	border-radius: 4px;
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.signature .much-heart::before,
+.signature .much-heart::after {
+	display: block;
+	content: "";
+	position: absolute;
+	margin: auto;
+	height: 10px;
+	width: 10px;
+	border-radius: 5px;
+	background: #ac1d3f;
+	top: -4px;
+}
+
+.signature .much-heart::after {
+	bottom: 0;
+	top: auto;
+	left: -4px;
+}
+
+.signature a {
+	color: #aaaaaa;
+	text-decoration: none;
+	font-weight: bold;
+}
+    </style>
+</head>
+<body>
+        <div class="alert">
+            <h2>Hey! Read Me...</h2>
+            <p>
+                这是一个用纯css给单选按钮或复选框设计样式的例子。如果你正在寻找一种更灵活和现代的方式来设计表单上的单选按钮，看看这个带有
+                <a href="https://codepen.io/AngelaVelasquez/details/BWXbxP" title="SVG单选按钮">SVG图标的版本</a>。我还为此写了一篇文章。
+            </p>
+        </div>
+
+        <!-- <div class="container">
+            <h2>Your favorite thing in the world:</h2>
+            <ul>
+                <li>
+                    <input type="radio" name="selector" id="f_word">
+                    <label for="f_word">pizza</label>
+                        <div class="check"></div>
+
+                </li>
+                <li>
+                    <input type="radio" name="selector" id="f_word1">
+                    <label for="f_word1">Bacon</label>
+                        <div class="check"></div>
+
+                </li>
+                <li>
+                    <input type="radio" name="selector" id="f_word2">
+                    <label for="f_word2">Cats</label>
+                        <div class="check"></div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="signature">
+            <p>Made with <i class="much-heart"></i> by <a href="https://codepen.io/AngelaVelasquez">Angela Velasquez</a></p>
+        </div> -->
+</body>
+</html>

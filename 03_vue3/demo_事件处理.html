@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
+
+</head>
+<body>
+
+<!-- 不传参数 -->
+<div id="app">
+    <button @click="count_add">增加 1</button>
+    <p class="a">点击 {{ count }} 次</p>
+</div>
+<script>
+    const app = {
+        data(){return {count: 0}},
+        methods:{
+            count_add:function () {
+                this.count++;
+                alert("点击")
+            }
+        }
+    }
+    Vue.createApp(app).mount("#app")
+</script>
+
+<!-- 传参数 -->
+<!--<div id="app">-->
+<!--    <button @click="count_add('abc')">增加 1</button>-->
+<!--    <p class="a">点击 {{ count }} 次</p>-->
+<!--</div>-->
+<!--<script>-->
+<!--    const app = {-->
+<!--        data(){return {count: 0}},-->
+<!--        methods:{-->
+<!--            count_add:function (message) {-->
+<!--                this.count++;-->
+<!--                alert(message);-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--    Vue.createApp(app).mount("#app")-->
+<!--</script>-->
+
+<!--
+事件处理程序中可以有多个方法，这些方法由逗号运算符分隔，且必须传参数($event)
+-->
+<div id="app3">
+    <button @click="one($event),two($event)">点我</button>
+</div>
+<script>
+    const app3 = Vue.createApp({
+          data() {
+  },
+        methods: {
+            one:function (event) {
+                alert("第一个事件处理器逻辑")
+            },
+            two:function (event) {
+                alert("第二个事件处理器逻辑")
+            }
+        }
+    }).mount("#app3")
+</script>
+
+</body>
+</html>

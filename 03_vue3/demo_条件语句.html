@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
+</head>
+<body>
+
+<div id="demo">
+    <p v-if="seen">现在你看到我了</p>  <!--这里， v-if 指令将根据表达式 seen 的值( true 或 false )来决定是否插入 p 元素。 -->
+</div>
+<script>
+    const app = {
+        data() {
+            return {seen: true}
+        }
+    }
+    Vue.createApp(app).mount('#demo')
+</script>
+
+<!--    因为 v-if 是一个指令，所以必须将它添加到一个元素上。如果是多个元素，可以包裹在 <template> 元素上，并在上面使用 v-if。最终的渲染结果将不包含
+ <template> 元素。-->
+<div id="app">
+    <template v-if="seen">
+        <h1>网站</h1>
+        <p>Google</p>
+        <p>Runoob</p>
+        <p>Taobao</p>
+    </template>
+</div>
+ <script>
+         const app2 = {
+        data() {
+            return {seen: true}
+        }
+    }
+    Vue.createApp(app2).mount('#app')
+</script>
+
+<!-- v-else 指令给 v-if 添加一个 "else" 块 -->
+<div id="apps">
+    <div v-if="Math.random()>0.5"> 随机数大于0.5</div>
+    <div v-else>随机数小于等于0.5</div>
+</div>
+<script>
+    const apps = {}
+    Vue.createApp(apps).mount('#apps')
+</script>
+
+<!-- v-else-if 即 v-if 的 else-if 块，可以链式的使用多次： -->
+<div id="app_g">
+    <div v-if="grade>=90">优秀成绩:{{grade}}</div>
+    <div v-else-if="grade>=80">良好成绩:{{grade}}</div>
+    <div v-else-if="grade>=60">一般成绩:{{grade}}</div>
+    <div v-else=>不及格成绩:{{grade}}</div>
+</div>
+<script>
+    const app_g = {data(){return {grade:Math.random()*100}}}
+    Vue.createApp(app_g).mount('#app_g')
+</script>
+
+<!--  v-show 我们也可以使用 v-show 指令来根据条件展示元素：-->
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        实战- 制作首页  http://www.boyaa.com/about.html
+
+
+     -->
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 14px;
+            font-family: "Microsoft YaHei","SimSun";
+            height: 8888px;
+        }
+
+        .header{
+            height: 58px;
+            background-color: #191d3a;
+        }
+
+       /* 版心 */
+        .inner_c{
+            width: 1000px;
+            margin: 0 auto; /* 让导航条、内容区域等部分的版心在父亲里居中*/
+        }
+        .header .logo{
+            float: left;
+            margin-left: 40px;
+        }
+        .header .nav{
+            float: left;
+        }
+        .header .nav ul{
+            list-style: none;
+        }
+        .header .nav ul li{
+            float: left;
+            width: 100px;
+            line-height: 58px;
+            border-left: 1px solid #252947;
+        }
+        .header .nav ul li.last{
+            border-right: 1px solid #252947;
+        }
+        .header .nav ul li a{
+            display: block;
+            height: 58px;
+            text-decoration: none;
+            color: #818496;
+            text-align: center;
+        }
+        .header .nav ul li a.current{
+            color: white;
+            background-color: #252947;
+        }
+        .header .nav ul li a:hover{
+            color: white;
+            background: #252947;
+        }
+        .header .jrwm_box{
+            float: left;
+            height: 58px;
+            width: 100px;
+            padding-left: 48px;
+            padding-top: 12px;
+        }
+        .header .jrwm_box .jrwm{
+            height: 34px;
+            background-image: url(images/jrwm.png);
+            background-repeat: no-repeat;
+            text-align: center; /*让这个div内部的超链接居中*/
+        }
+        .header .jrwm_box .jrwm a{
+            display: block; /*将超链接转为块儿，可以保证其霸占父亲的整行*/
+            line-height: 34px; /*让行高为背景图片的高度，可以保证超链接的文字在背景图片里垂直居中*/
+            text-decoration: none; /*去掉超链的下划线*/
+            color: white;
+        }
+
+                /*清除浮动的影响*/
+        .cl{
+            clear: both;
+        }
+
+        .banner{
+            height: 485px;
+            background-image: url(http://img.smyhvae.com/20170813_1053.jpg);
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+
+        .content{
+            padding-top: 50px;
+        }
+        .content .product{
+            height: 229px;
+            border-bottom: 1px solid #DBE1E7;
+        }
+        .content .product ul{
+            display: none;
+        }
+        .content .product ul li{
+            float: left;
+            width: 218px;
+            margin-right: 43px;
+            background-color: rebeccapurple;
+        }
+        .content .product ul li.last{
+            width: 217px;
+            margin-right: 0;
+        }
+        .content .product ul li img{
+            width: 218px;
+            height: 130px;
+        }
+                .content .product ul li.last img{
+            width: 217px;
+            height: 130px;
+        }
+
+        .content .product ul li h3{
+            text-align: center;
+            line-height: 38px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .content .product ul li p.djbf{
+            text-align: center;
+            line-height: 16px;
+        }
+        .content .product ul li p.djbf a{
+            text-decoration: none;
+            fon
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="inner_c">
+           <div class="logo">
+                <img src="http://www.boyaa.com/images/logo.png" alt="">
+            </div>
+
+            <div class="nav">
+                <ul>
+                    <li><a href="#" class="current">首页</a></li>
+                    <li><a href="#">博雅游戏</a></li>
+                    <li><a href="#">博雅新闻</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">客服中心</a></li>
+                    <li class="last"><a href="#">投资者关系</a></li>
+                </ul>
+            </div>
+
+            <div class="jrwm_box">
+                <div class="jrwm">
+                    <a href="https://www.google.com/" target="_blank">加入我们</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="cl"></div>
+
+    <div class="banner"></div>
+
+    <div class="content">
+        <div class="product">
+            <ul>
+                <li>
+                    <img src="http://www.boyaa.com/pic/laxxzxx.png" alt="">
+                    <h3>演示ppt</h3>
+                    <p>
+                        <a href="#" class="djbf">立即播放</a>
+                    </p>
+                </li>
+                <li>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

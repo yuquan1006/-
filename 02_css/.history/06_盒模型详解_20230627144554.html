@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS盒模型详解
+        盒子模型，英文既box model。 无论是div、span、还是a都是盒子。但是图片、表单元素一律看作是文本，它们并不是盒子，比如说一张图片里并不能放东西，它自己就是自己的内容
+    盒子中的区域：
+        一个盒子中主要的属性就5个：width、height、padding、border、margin。如下：
+            width和height：内容的宽度、高度（不是盒子的宽度、高度）。
+            padding：内边距。
+            border：边框。
+            margin：外边距。
+        总元素的宽度=宽度+左填充+右填充+左边框+右边框+左边距+右边距
+        总元素的高度=高度+顶部填充+底部填充+上边框+下边框+上边距+下边距
+        06_盒子模型图.jpg
+
+        padding
+            padding就是内边距。padding的区域有背景颜色，css2.1前提下，并且背景颜色一定和内容区域的相同。也就是说，background-color将填充所有border以内的区域
+            padding有四个方向，所以我们能分别描述四个放心的padding。
+                方法有两种 1 写小属性如
+                    	padding-top: 30px;
+                        padding-right: 20px;
+                        padding-bottom: 40px;
+                        padding-left: 100px;
+                        2 综合属性写法：(上、右、下、左)（顺时针方向，用空格隔开）
+                        padding:30px 20px 40px 100px;
+                用小属性叠大属性：
+                    padding: 20px;
+                    padding-left: 30px; # 这个padding对于的盒子模型中padding为 20 20 20 30
+
+                    padding-left: 30px;
+                    padding: 20px;     # 这个padding对于的盒子模型中padding为 20 20 20 20. 第一行小属性无效，因为被第二行大属性层叠掉了
+                一些元素默认带有padding 比如ul标签。所以，我们做站的时候，为了便于控制，总是喜欢清除这个默认的padding。
+                可以使用*进行清除：*{margin: 0; padding: 0;} 。 但是，*的效率不高，所以我们使用并集选择器，罗列所有的标签（不用背，有专业的清除默认样式的样式表，今后学习）：
+
+        border
+            border就是边框。边框有三个要素：像素（粗细）、线型、颜色。
+            border是一个大综合属性。 border属性是能够被拆开的，有两大种拆开的方式：
+                    （1）按三要素拆开：border-width、border-style、border-color。（一个border属性是由三个小属性综合而成的）
+                    （2）按方向拆开：border-top、border-right、border-bottom、border-left。
+            一个border属性，是由三个小属性综合而成的。如果某一个小属性后面是空格隔开的多个值，那么就是上右下左的顺序。举例如下：
+                border-width:10px 20px;
+                border-style:solid dashed dotted;
+                border-color:red green blue yellow; # 三要素拆
+                # 方向拆
+                border-top:10px solid red;
+                border-right:10px solid red;
+                border-bottom:10px solid red;
+                border-left:10px solid red;
+            用小属性叠大属性
+                border:10px solid red;
+                border-right-color:blue;
+     -->
+    <style type="text/css">
+        .div{
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+            border: 2px solid red;
+            margin: 0px;
+        }
+        .div4{
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+            border: 1px solid red;
+            background-color: pink;
+        }
+        #div1{
+            width: 123px;
+            height: 123px;
+            padding: 20px 40px;
+            border: 1px solid;
+        }
+        #div2{
+            width: 123px;
+            height: 123px;
+            padding: 20px;
+            padding-right: 40px;
+            border: 1px solid;
+        }
+
+        #div3{
+            width: 0;
+            height: 0;
+            border: 50px solid transparent;
+            border-top-color: red;
+            border-bottom: none;
+}
+
+        .div1{
+            width: 0;
+            height: 0;
+            border: 50px solid white;
+            border-top-color: red;
+            border-bottom: none;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="div4">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</div>
+
+    <!-- <div id="div1">hellp 塑料颗粒都是顶顶顶顶顶顶顶顶顶顶顶</div> -->
+
+    <div class="div1"></div>
+</body>
+</html>

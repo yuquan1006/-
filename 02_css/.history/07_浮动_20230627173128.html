@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        标签分为：行内元素和块级元素
+        行内元素和块级元素的区别：（非常重要）
+        行内元素：(span、a、b、i、u、em)
+            与其他行内元素并排；
+            不能设置宽、高。默认的宽度，就是文字的宽度。
+        块级元素：(div、h系列、p、li、dt、dd)
+            霸占一行，不能与其他任何元素并列；
+            能接受宽、高。如果不设置宽度，那么宽度将默认变为父亲的100%。
+        行内元素和块级元素的相互转换
+            给一个块级元素（比如div）设置：display: inline;那么，这个标签将立即变为行内元素，此时它和一个span无异。inline就是“行内”。也就是说：此时这个div不能设置宽度、高度；此时这个div可以和别人并排了。
+            给一个行内元素（比如span）设置：display: block;，这个标签将立即变为块级元素，此时它和一个div无异。block”是“块”的意思。也就是说：此时这个span能够设置宽度、高度 此时这个span必须霸占一行了，别人无法和他并排 如果不设置宽度，将撑满父亲
+
+        浮动的性质：浮动是css布局用的最多的属性
+            性质1：浮动的元素脱离标准流
+                在默认情况下，两个div标签是上下进行排列的。现在由于float属性让<div>标签出现了浮动，于是<div>不遵从标准流进行排列。
+                *一旦一个元素浮动了，那么，将能够并排了，并且能够设置宽高了。无论它原来是个div还是个span。**所有标签，浮动之后，已经不区分行内、块级了
+            性质2：浮动的元素互相贴靠
+            性质3：浮动的元素有“字围”效果。标准流中的文字不会被浮动的盒子遮挡住。（文字就像水一样）
+            性质4：收缩：一个浮动的元素，如果没有设置width，那么将自动收缩为内容的宽度（这点非常像行内元素）
+        浮动的清除：这里所说的清除浮动，指的是清除浮动与浮动之间的影响。
+            clear:both; 最简单的清除浮动的方法，就是给盒子增加clear:both；表示自己的内部元素，不受其他盒子的影响。
+
+     -->
+     <style type="text/css">
+        h1{
+            display: inline;
+        }
+        .span{
+            display: block;
+            height: 80px;
+            width: 500px;
+            background-color: red;
+        }
+
+        .box1{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .box2{
+            float: left;
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        .span2{
+            float:left;
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+
+        .box3{
+            float: left;
+            background-color: pink;
+        }
+
+        li{
+            float: left;
+            width: 100px;
+            height: 20px;
+            background-color: burlywood;
+
+        }
+     </style>
+</head>
+<body>
+    <div>第一行</div>
+    <h1 class="div1">第33行</h1>
+    <h1 class="div1">第344行</h1>
+    <span class="span">弟4444行</span>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <br>
+    <span class="span2">中国第一</span>
+    <div class="box3">天地壹号</div>
+
+    <div>
+        <ul>
+            <li>天地一号</li>
+            <li>天地一号</li>
+            <li>天地一号</li>
+        </ul>
+    </div>
+
+    <div class="clear">
+        <ul>
+            <li>天地一号</li>
+            <li>天地一号</li>
+            <li>天地一号</li>
+        </ul>
+    </div>
+</body>
+</html>

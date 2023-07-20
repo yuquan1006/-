@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .logo-wrap{
+            margin: 0;
+            font-weight: 600;
+            line-height: 58px;
+            vertical-align: middle;
+            padding: 0px 5px;
+            min-width: 200px;
+
+        }
+        .float-wrap{
+            display: block;
+        }
+        .float-wrap .left{
+            float: left;
+        }
+        .float-wrap img{
+            max-width: 30px;
+            margin-bottom: -10px;
+        }
+        .float-wrap span{
+            margin-left: 10px;
+        }
+        .el-menu{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding-left: 0;
+        }
+        .el-menu-item{
+            height: 56px;
+            line-height: 86px;
+            background-color: blue;
+
+        }
+
+        .el-container{
+            height: 937px;
+            display: flex;
+            flex-direction: row;
+        }
+        .is-vertical{
+            flex-direction: column;
+        }
+        el-main{
+            padding: 0;
+            overflow: hidden;
+            height: 100;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <section class="el-container">
+
+             <!-- 侧边栏 -->
+            <aside style="background-color: #606266;">
+                <div class="logo-wrap">
+                    <div class="float-wrap">
+                        <div class="left">
+                            <img src="http://192.168.1.144:8000/static/admin/simpleui-x/img/logo.png">
+                        </div>
+                        <div>
+                            <span>测试中台</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="el-menu">
+                        <li class="el-menu-item" style="padding-left: 20px;">
+                            <i></i>
+                            <span>控制面板</span>
+                        </li>
+                        <li class="el-menu-item" style="padding-left: 20px;">
+                            <i></i>
+                            <span>控制面2板</span>
+                        </li>
+                        <li class="el-menu-item" style="padding-left: 20px;">
+                            <div>
+                                <ul>
+                                    <li>分工给</li>
+                                    <li>分工给2</li>
+                                    <li>分工给3</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+            </aside>
+
+
+
+            <section class="el-container is-vertical">
+                <header style="height: auto; font-size: 12px; padding: 10px;"></header>
+                <mai></mai>
+            </section>
+        </section>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
+
+</head>
+<body>
+<!--
+组件（Component）是 Vue.js 最强大的功能之一。
+组件可以扩展 HTML 元素，封装可重用的代码。
+组件系统让我们可以用独立可复用的小组件来构建大型应用，几乎任意类型的应用的界面都可以抽象为一个组件树
+-->
+<div id="app">
+    <my_h1></my_h1> <!-- 调用组件 -->
+
+</div>
+<script>
+    // 创建一个应用
+    const app = Vue.createApp({})
+    // 定义一个名为my_h1的新全局组件
+    app.component("my_h1",{template: "<h1>自定义组件</h1>"})
+    // 应用挂载到一个dom元素中
+    app.mount("#app")
+</script>
+
+<div id="app2">
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+</div>
+<script>
+    const app2 = Vue.createApp({})
+    // // 定义一个名为 button-counter 的新全局组件
+    app2.component("button-counter", {
+        data(){
+            return {count: 0}
+        },
+        template: "<button @click='count++'>点了{{count}}次</button>"
+    })
+    app2.mount("#app2")
+</script>
+
+<!--  局部组件
+-->
+<div id ="app3">
+    <my_h12></my_h12>
+    <button-counter11></button-counter11>
+
+</div>
+<script>
+    var my_h12 = {template: "<h1> 局部自定义组件</h1>"}
+    var button_counter11 = {data(){return {count: 0}},template: "<button @click='count++'>点击了{{count}} 次</button>"}
+    const app3 = Vue.createApp({
+        components: {"my_h12": my_h12, "button-counter11": button_counter11}
+    })
+    app3.mount("#app3")
+</script>
+
+
+<!--
+prop 是子组件用来接受父组件传递过来的数据的一个自定义属性。
+父组件的数据需要通过 props 把数据传给子组件，子组件需要显式地用 props 选项声明 "prop"：
+-->
+<div id="app4">
+  <site-name title="Google"></site-name>
+  <site-name title="Runoob"></site-name>
+  <site-name title="Taobao"></site-name>
+</div>
+<script>
+    const app4 = Vue.createApp({})
+    app4.component('site-name', {
+      props: ['title'],
+      template: `<h4>{{ title }}</h4>`
+    })
+    app4.mount('#app4')
+</script>
+
+<!--
+动态 Prop
+类似于用 v-bind 绑定 HTML 特性到一个表达式，也可以用 v-bind 动态绑定 props 的值到父组件的数据中。每当父组件的数据变化时，该变化也会传导给子组件：
+-->
+<div id="app5">
+  <site-info v-for="site in sites" :title="site.title" :id="site.id"></site-info>
+</div>
+<script>
+    const app5 = Vue.createApp({data(){
+        return {sites:
+                [   {id:1,title:"谷歌"},
+                    {id:2,title:"火狐"},
+                    {id:3,title:"360"}]
+        }
+    }
+    })
+    app5.component('site-info', {
+      props: ['title','id'],
+      template: `<h1>{{id}} - {{ title }}</h1>`
+    })
+    app5.mount('#app5')
+</script>
+
+
+
+</body>
+</html>

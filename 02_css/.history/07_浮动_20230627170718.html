@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        标签分为：行内元素和块级元素
+        行内元素和块级元素的区别：（非常重要）
+        行内元素：(span、a、b、i、u、em)
+            与其他行内元素并排；
+            不能设置宽、高。默认的宽度，就是文字的宽度。
+        块级元素：(div、h系列、p、li、dt、dd)
+            霸占一行，不能与其他任何元素并列；
+            能接受宽、高。如果不设置宽度，那么宽度将默认变为父亲的100%。
+
+        行内元素和块级元素的相互转换
+            给一个块级元素（比如div）设置：display: inline;那么，这个标签将立即变为行内元素，此时它和一个span无异。inline就是“行内”。也就是说：此时这个div不能设置宽度、高度；此时这个div可以和别人并排了。
+
+     -->
+     <style type="text/css">
+        .div1{
+            display: inline;
+        }
+     </style>
+</head>
+<body>
+    <div>第一行</div>
+    <div>第2号行</div>
+
+    <div class="div1">第33行</div>
+
+</body>
+</html>

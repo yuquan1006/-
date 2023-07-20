@@ -1,0 +1,46 @@
+
+        .content{
+            padding-top: 50px;
+        }
+        .content .product{
+            height: 229px;
+            border-bottom: 1px solid #DBE1E7;
+        }
+        .content .product ul{
+            display: none;
+        }
+        .content .product ul li{
+            float: left;
+            width: 218px;
+            margin-right: 43px;
+        }
+        .content .product ul li.last{
+            margin-right: 0;
+            width: 217px;
+        }
+        .content .product ul li img{
+            width: 218px;
+            height: 130px;
+        }
+                .content .product ul li.last img{
+            width: 217px;
+        }
+
+        .content .product ul li h3{
+            text-align: center;
+            line-height: 38px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .content .product ul li p.djbf{
+            text-align: center;
+            line-height: 16px;
+        }
+        .content .product ul li p.djbf a{
+            text-decoration: none;
+            font-size: 14px;
+            color: #38b774;
+            background-image: url(images/sanjiaoxing.png) no-repeat right 5px;
+            padding-right: 12px;
+
+        }

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        /*  css语法：选择器{ 属性名: 属性值; 属性名: 属性值; }
+        css怎么学？ 1 选择器，怎么选 2 属性，样式是什么
+
+        css的四种基本选择器，CSS 选择器：就是指定 CSS 要作用的标签，那个标签的名称就是选择器。意为：选择哪个容器。
+        基本选择器：
+            标签选择器：针对一类标签
+            ID 选择器：针对某一个特定的标签使用 #来定义  tip：HTML 页面，不能出现相同的 id，哪怕他们不是一个类型。比如页面上有一个 id 为 pp 的 p，一个 id 为 pp 的 div，是非法的！
+            类选择器(尽可能使用class)：针对你想要的所有标签使用 圆点.来定义
+                （1）不要去试图用一个类名，把某个标签的所有样式写完。这个标签要多携带几个类，共同完成这个标签的样式。
+                （2）每一个类要尽可能小，有“公共”的概念，能够让更多的标签使用。
+            通用选择器（通配符）：针对所有的标签都适用（不建议使用）
+
+
+        css的书写方式：
+        行内样式：在某个特定的标签里采用 style 属性。范围只针对此标签。
+        内嵌样式（内联样式）：在页面的 head 标签里里采用<style>标签。范围针对此页面。
+        外链样式：引入外部样式表 CSS 文件。这种引入方式又分为两种：
+            3.1 采用<link>标签。例如：<link rel = "stylesheet" type = "text/css" href = "a.css"></link> 或者获取外部公开的css
+            3.2 采用 import 导入，必须写在<style>标签中。然后用类似于@import url(a.css) ;这种方式导入。
+
+
+
+
+
+        */
+
+
+        /* 下面这个部分就是css样式，选择器p表示，只要是带<p>标签的元素，都具有该属性-->*/
+        p {
+            color: red;
+            font-size: 30px;
+            text-decoration: underline;
+            font-weight: bold;
+            text-align: center;
+            font-style: italic;
+        }
+
+        h1 {
+            color: blue;
+            font-size: 50px;
+            font-weight: bold;
+            background-color: pink;
+        }
+
+        /* ID选择器实例 */
+        #name_id{
+            color: green;
+            border: 3px;
+            font-size: 40px;
+        }
+
+        /* 类选择器实例 */
+        .hello{
+            color: wheat;
+            border: 3px;
+            font-size: 40px;
+        }
+        .lv{
+            color: green;
+        }
+        .da{
+            font-size: 100px;
+        }
+        .underline{
+            text-decoration: underline;
+        }
+
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="a.css"></link>
+
+</head>
+
+<body>
+    <h1>我是大标题</h1>
+    <p>我是大标题</p>
+
+    <p style="color: yellow; background-color: red;"> CSS 和 HTML 结合方式一：行内样式。采用 style 属性。范围只针对此标签适用。</p>
+    <p>内嵌样式（内联样式） 在head 标签中加入style标签，对多个标签进行统一修改，范围针对此页面。</p>
+    <p1>外链样式：引入外部样式表 CSS 文件</p1>
+
+    <div id="name_id">ID 选择器：针对某一个特定的标签使用 #来定义</div>
+    <div class="hello">类选择器：针对你想要的所有标签使用 圆点.来定义</div>
+
+    <P class="lv da">段落1</P>
+    <P class="lv da">段落2</P>
+    <P class="lv da">段落3</P>
+
+
+</body>
+
+</html>

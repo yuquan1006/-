@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
+</head>
+<body>
+<div id="demo">
+    {{message}}
+</div>
+
+<div id="app"></div>
+
+<script>
+    const HelloVueApp = {
+        data() {
+            return {message: "hello vue"};
+        }
+    }
+    Vue.createApp(HelloVueApp).mount("#demo")
+</script>
+
+
+<script>
+    const app = Vue.createApp({
+  data() {
+    return { count: 4 }
+  },
+  methods: {
+    increment() {
+      // `this` 指向该组件实例
+      this.count++
+    }
+  }
+})
+
+    const vm = app.mount('#app')
+    document.write(vm.$data.count) // => 4
+    document.write("<br>")
+    document.write(vm.count) // => 4
+    document.write("<br>")
+    vm.increment()
+    document.write(vm.count) // => 5
+</script>
+</body>
+</html>
+
+<!--
+刚开始学习 Vue，我们不推荐使用 vue-cli 命令行工具来创建项目，更简单的方式是直接在页面引入 vue.global.js 文件来测试学习。
+const :将变量申明为一个常量且必须初始化赋值。常量的含义是指向的对象不能修改，但是可以修改对象中的属性
+解析：
+    1 引用vue.js文件
+    2 html中定义变量
+    3 script中 定义app常量
+    4 data() 选项是一个函数。Vue 在创建新组件实例的过程中调用此函数。它应该返回一个对象，然后 Vue 会通过响应性系统将其包裹起来，并以 $data 的形式存储在组件实例中。
+    5 Vue3 中的应用是通过使用 createApp 函数来创建的
+    6 使用 mount() 挂载应用时，该组件是渲染的起点。
+    一个应用需要被挂载到一个 DOM 元素中，以上代码使用 mount('#demo') 将 Vue 应用 HelloVueApp 挂载到 <div id="demo"></div> 中。
+
+    methods 见line25行
+    我们可以在组件中添加方法，使用 methods 选项，该选项包含了所需方法的对象
+-->

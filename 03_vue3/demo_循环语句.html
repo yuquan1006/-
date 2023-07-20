@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
+<!--
+循环使用 v-for 指令。
+v-for 指令需要以 site in sites 形式的特殊语法， sites 是源数据数组并且 site 是数组元素迭代的别名。
+v-for 可以绑定数据到数组来渲染一个列表：
+-->
+
+
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="site in sites">{{site.age}}</li>
+        <!-- <li v-for="(site,index) in sites">{{index}}-{{site.age}}</li>  -->
+        <!-- v-for 还支持一个可选的第二个参数，参数值为当前项的索引 例：看上一行 -->
+
+        <!-- 模板 <template> 中使用 v-for：  -->
+<!--        <template v-for="site in sites">-->
+<!--            <li> {{site.text}}</li>-->
+<!--        </template>-->
+    </ul>
+</div>
+<script>
+    const app = {
+        data() {
+         return {
+             sites:[
+                 {text: "谷歌",age :3},
+                 {text: "火狐",age :2},
+                 {text: "edge",age :1}
+             ]
+         }
+        }
+    }
+    Vue.createApp(app).mount("#app")
+</script>
+
+
+<!--  v-for 迭代对象 v-for 可以通过一个对象的属性来迭代数据：
+-->
+
+<div id="app3">
+    <ul>
+        <template v-for="value in object">
+            <li>{{value}}</li>
+        </template>
+    </ul>
+</div>
+<script>
+    const app3 = {
+        data(){
+            return {
+                 object: {
+                     name: '菜鸟教程',
+                     url: 'http://www.runoob.com',
+                     slogan: '学的不仅是技术，更是梦想！'
+                 }
+            }
+        }
+    }
+    Vue.createApp(app3).mount("#app3")
+</script>
+
+
+
+
+
+<!-- 联合使用 v-for/v-if 给 select 设置默认值：  -->
+<div id="app2">
+   <select @change="changeVal($event)" >
+        <template v-for="(site,index) in sites" :site="site" :index="index" :key="site.id">
+            <option v-if = "index == 0" :value="site.name" selected>{{site.name}}</option>
+            <option v-else :value="site.name" >{{site.name}}</option>
+        </template>
+    </select>
+    <div>你当前选中的是: {{selOption}}</div>
+</div>
+<script>
+    const app2 = {
+        data(){
+            return {
+                selOption: "中国",
+                sites: [
+                    {id:1,name:"中国"},
+                    {id:2,name:"美国"},
+                    {id:3,name:"俄罗斯"}
+                ]
+            }
+        },
+        methods:{
+            changeVal: function (event) {
+                this.selOption = event.target.value;
+                alert("你选中了"+this.selOption)
+            }
+        }
+
+    }
+    Vue.createApp(app2).mount("#app2")
+
+</script>
+</body>
+</html>

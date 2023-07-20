@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS盒模型详解
+        盒子模型，英文既box model。 无论是div、span、还是a都是盒子。但是图片、表单元素一律看作是文本，它们并不是盒子，比如说一张图片里并不能放东西，它自己就是自己的内容
+    盒子中的区域：
+        一个盒子中主要的属性就5个：width、height、padding、border、margin。如下：
+            width和height：内容的宽度、高度（不是盒子的宽度、高度）。
+            padding：内边距。
+            border：边框。
+            margin：外边距。
+        总元素的宽度=宽度+左填充+右填充+左边框+右边框+左边距+右边距
+        总元素的高度=高度+顶部填充+底部填充+上边框+下边框+上边距+下边距
+        06_盒子模型图.jpg
+
+        padding
+            padding就是内边距。padding的区域有背景颜色，css2.1前提下，并且背景颜色一定和内容区域的相同。也就是说，background-color将填充所有border以内的区域
+
+
+     -->
+    <style type="text/css">
+        .div{
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+            border: 2px solid red;
+            margin: 0px;
+        }
+        .div4{
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+            border: 1px solid red;
+            background-color: pink;
+        }
+        #div1{
+            width: 123px;
+            height: 123px;
+            padding: 20px 40px;
+            border: 1px solid;
+        }
+        #div2{
+            width: 123px;
+            height: 123px;
+            padding: 20px;
+            padding-right: 40px;
+            border: 1px solid;
+        }
+
+        #div3{
+            width: 0;
+            height: 0;
+            border: 50px solid transparent;
+            border-top-color: red;
+            border-bottom: none;
+}
+
+        .div1{
+            width: 0;
+            height: 0;
+            border: 50px solid white;
+            border-top-color: red;
+            border-bottom: none;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="div4">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</div>
+
+    <!-- <div id="div1">hellp 塑料颗粒都是顶顶顶顶顶顶顶顶顶顶顶</div> -->
+
+    <div class="div1"></div>
+</body>
+</html>
